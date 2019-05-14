@@ -1,11 +1,9 @@
-@import '../../assets/scss/common.scss';
-
 .layer {
     background-color: #000000;
     width: 120px;
     margin: 0 auto;
-    background-image: url(../../assets/img/img.png);
-    background-size: cover;
+    background-image: url('./img/img.png');
+    background-size: contain;
     p {
         line-height: 32px;
         color: #ffffff;
