@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const cleanWebpackPlugin = require('clean-webpack-plugin')
+const Webpack = require('webpack')
 
 module.exports = {
     mode: 'development',
@@ -54,6 +55,11 @@ module.exports = {
     },
     plugins: [
         new cleanWebpackPlugin(),
+        new Webpack.ProvidePlugin({ // 全局引入jquery
+            $: 'jquery',
+            jQuery: 'jquery',
+            'window.jQuery': 'jquery'
+        }),
         new HtmlWebpackPlugin({
             filename: 'html/home.html', // 指定生成的文件名称：index-[hash].html
             template: './src/views/home/template.html', // 指定根目录下的index文件
@@ -63,7 +69,7 @@ module.exports = {
                 removeComments: true,
                 collapseWhitespace: true
             },
-            chunks: ['home']
+            chunks: ['jquery', 'home']
         }),
         new HtmlWebpackPlugin({
             filename: 'html/news.html', // 指定生成的文件名称：index-[hash].html
@@ -74,7 +80,7 @@ module.exports = {
                 removeComments: true,
                 collapseWhitespace: true
             },
-            chunks: ['news']
+            chunks: ['jquery', 'news']
         })
     ],
     stats: {
