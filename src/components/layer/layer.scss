@@ -1,0 +1,16 @@
+@import '../../assets/scss/common.scss';
+
+.layer {
+    background-color: #000000;
+    width: 120px;
+    margin: 0 auto;
+    background-image: url(../../assets/img/img.png);
+    background-size: cover;
+    p {
+        line-height: 32px;
+        color: #ffffff;
+    }
+    img {
+        max-width: 200px;
+    }
+}

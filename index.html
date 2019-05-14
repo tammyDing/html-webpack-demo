@@ -4,22 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>webpack demo</title>
 </head>
 <body>
-    <div>
-        <p><%= htmlWebpackPlugin.options.time %></p>
-    </div>
-    <h1>遍历htmlWebpackPlugin对象并展示出来</h1>
-    <p>files:</p>
-    <% for(var key in htmlWebpackPlugin.files) { %>
-        <%= key %>: <%= JSON.stringify(htmlWebpackPlugin.files[key]) %> <br />
-    <% } %>
-
-    <p>options:</p>
-    <% for(var key in htmlWebpackPlugin.options) { %>
-        <%= key %>: <%= JSON.stringify(htmlWebpackPlugin.options[key]) %> <br />
-    <% } %>
+    <div id="app"></div>
     <!-- 我是一行注释 -->
 </body>
 </html>
